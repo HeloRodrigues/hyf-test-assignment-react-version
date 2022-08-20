@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import FooterLink from "./components/FooterLink";
+import FooterCards from "./components/FooterCards";
 
 const Footer = () => {
   const toTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
@@ -21,34 +21,10 @@ const Footer = () => {
   return (
     <footer>
       <FooterLinks>
-        <FooterCards>
-          <h4 id="features">Features</h4>
-          {featureLinks.map((link) => (
-            <FooterLink text={link} />
-          ))}
-        </FooterCards>
-
-        <FooterCards>
-          <h4>Support</h4>
-          {supportLinks.map((link) => (
-            <FooterLink text={link} />
-          ))}
-        </FooterCards>
-
-        <FooterCards>
-          <h4>Trending</h4>
-          {trendingLinks.map((link) => (
-            <FooterLink text={link} />
-          ))}
-        </FooterCards>
-
-        <FooterCards>
-          <h4>Get to Know us</h4>
-          {getToKnowLinks.map((link)=>(
-            <FooterLink text={link}/>
-          ))}
-        </FooterCards>
-
+        <FooterCards title="Features" links={featureLinks} />
+        <FooterCards title="Support" links={supportLinks} />
+        <FooterCards title="Trending" links={trendingLinks} />
+        <FooterCards title="Get To Know Us" links={getToKnowLinks} />
         <FooterCardInstagram>
           <h4>Instagram Photos</h4>
           <FooterInstagramButton>
@@ -74,20 +50,6 @@ const FooterLinks = styled.div`
   font-family: "Poppins", sans-serif;
   font-size: 15px;
   font-weight: 300;
-`;
-
-const FooterCards = styled.div`
-  width: 150px;
-  height: 250px;
-
-  a {
-    text-decoration: none;
-    color: white;
-
-    &:hover {
-      color: #b0bec5;
-    }
-  }
 `;
 
 const FooterCardInstagram = styled.div`
